@@ -4,10 +4,10 @@ import UIKit
 import XCTest
 
 func bubbleSort(_ arr: inout [Int]) -> [Int] {
-    for _ in 0..<arr.count-1 {
-        for j in 0..<arr.count-1 {
-            if arr[j] > arr[j+1] {
-                arr.swapAt(j, j+1)
+    for _ in 0 ..< arr.count - 1 {
+        for j in 0 ..< arr.count - 1 {
+            if arr[j] > arr[j + 1] {
+                arr.swapAt(j, j + 1)
             }
         }
     }
@@ -27,17 +27,17 @@ class BubbleSortTests: XCTestCase {
     
     func testCase1BubbleSort() {
         var arr = [4, 3, 2, 1]
-        XCTAssertEqual([1, 2, 3, 4], bubbleSort(&arr))
+        XCTAssertEqual(Array(1 ... 4), bubbleSort(&arr))
     }
 
     func testCase2BubbleSort() {
         var arr = [6, 3, 5, 4, 1, 2]
-        XCTAssertEqual([1, 2, 3, 4, 5, 6], bubbleSort(&arr))
+        XCTAssertEqual(Array(1 ... 6), bubbleSort(&arr))
     }
 
     func testCase3BubbleSort() {
-        var arr = [1, 2, 3, 4, 5, 6]
-        XCTAssertEqual([1, 2, 3, 4, 5, 6], bubbleSort(&arr))
+        var arr = [4, 5, 3, 6, 1, 2]
+        XCTAssertEqual(Array(1 ... 6), bubbleSort(&arr))
     }
     
     func testCase4BubbleSort() {
